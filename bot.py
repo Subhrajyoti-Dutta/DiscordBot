@@ -21,7 +21,7 @@ async def on_ready():
 async def on_member_join(member):
     await member.create_dm()
     await member.dm_channel.send(
-        f'Hi {member.name}, welcome to Pichavaram Event server!'
+        f'Hi {member.name}, welcome to {guild.name} server!'
     )
 
 @client.event
@@ -29,8 +29,7 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.content.lower() == 'hi':
-        response = msg.reply(message)
-        await message.channel.send(response)
+    response = msg.reply(message)
+    await message.channel.send(response)
 
 client.run(TOKEN)
